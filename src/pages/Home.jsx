@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TrendingUp, Shield, BarChart3, Briefcase, Calculator, Smartphone, CheckCircle, ChevronRight, Star } from 'lucide-react';
+import { TrendingUp, TrendingDown, Shield, BarChart3, Briefcase, Calculator, Smartphone, CheckCircle, ChevronRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -69,6 +69,34 @@ const Home = () => {
         </div>
         
         <div className="hero-glow"></div>
+      </section>
+
+      {/* MARKET OVERVIEW SECTION */}
+      <section className="market-overview-section container text-center">
+        <h2 className="section-title">Live Market Snapshot</h2>
+        <p className="section-subtitle mx-auto">Real-time performance of key indices and top active equities.</p>
+        
+        <div className="market-grid">
+          {[
+            { label: 'NIFTY 50', value: '21,456.65', change: '+120.50', pct: '+0.56%', isUp: true },
+            { label: 'SENSEX', value: '71,483.75', change: '+350.25', pct: '+0.49%', isUp: true },
+            { label: 'RELIANCE', value: '2,564.30', change: '-12.40', pct: '-0.48%', isUp: false },
+            { label: 'HDFCBANK', value: '1,680.15', change: '+5.75', pct: '+0.34%', isUp: true },
+            { label: 'INFY', value: '1,532.80', change: '-8.20', pct: '-0.53%', isUp: false },
+            { label: 'TCS', value: '3,845.90', change: '+42.10', pct: '+1.10%', isUp: true }
+          ].map((item, idx) => (
+            <div key={idx} className="market-card card">
+              <div className="market-header">
+                <h4>{item.label}</h4>
+                {item.isUp ? <TrendingUp size={18} className="text-green" /> : <TrendingDown size={18} className="text-red" />}
+              </div>
+              <div className="market-value">₹{item.value}</div>
+              <div className={`market-change ${item.isUp ? 'text-green' : 'text-red'}`}>
+                {item.change} ({item.pct})
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* SERVICES SECTION */}
