@@ -1,0 +1,230 @@
+.section-padding {
+  padding: 60px 20px 100px;
+}
+
+.revenue-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.revenue-card {
+  padding: 35px;
+  border-top: 4px solid transparent;
+}
+
+.revenue-card:hover {
+  border-top-color: var(--primary-green);
+  transform: translateY(-5px);
+}
+
+.revenue-icon {
+  margin-bottom: 20px;
+  color: var(--primary-green);
+}
+
+.text-purple { color: #9C27B0; }
+.text-blue { color: #03A9F4; }
+.text-amber { color: #FFC107; }
+.text-red { color: #FF5252; }
+.text-green { color: #00C853; }
+
+.revenue-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.revenue-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.sub-tiers {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tier {
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.05);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.tier.highlight {
+  background: rgba(0, 230, 118, 0.1);
+  color: var(--primary-green);
+  border: 1px solid rgba(0, 230, 118, 0.3);
+}
+
+.split-section {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+  align-items: center;
+}
+
+.split-content {
+  flex: 1.2;
+}
+
+.split-chart {
+  flex: 0.8;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(2, 12, 27, 0.4);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.chart-container {
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+
+/* Revenue Flow Diagram CSS */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  background: rgba(2, 12, 27, 0.4);
+  padding: 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  overflow-x: auto;
+}
+
+.flow-node {
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid;
+  position: relative;
+  z-index: 2;
+}
+
+.user-node {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--text-muted);
+}
+
+.core-node {
+  background: rgba(0, 230, 118, 0.1);
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.2);
+}
+
+.partner-node {
+  background: rgba(3, 169, 244, 0.1);
+  border-color: #03A9F4;
+  color: #03A9F4;
+  margin-bottom: 20px;
+}
+
+.partner-node:last-child {
+  margin-bottom: 0;
+}
+
+.flow-arrows {
+  display: flex;
+  position: relative;
+  flex: 1;
+  min-width: 80px;
+}
+
+.arrow-line {
+  height: 2px;
+  background-color: var(--text-muted);
+  width: 100%;
+  position: relative;
+}
+
+.arrow-line::after {
+  content: '▶';
+  position: absolute;
+  right: -5px;
+  top: -8px;
+  color: var(--text-muted);
+}
+
+.arrow-line span {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.flow-partners {
+  display: flex;
+  flex-direction: column;
+}
+
+.split {
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: 200px;
+}
+
+.arrow-branch {
+  position: absolute;
+  height: 2px;
+  background: var(--text-muted);
+  left: 0;
+  width: 100%;
+}
+
+.arrow-branch::after {
+  content: '▶';
+  position: absolute;
+  right: -5px;
+  top: -8px;
+  color: var(--text-muted);
+}
+
+.arrow-branch span {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.arrow-branch.top {
+  top: 15%;
+}
+.arrow-branch.right {
+  top: 50%;
+}
+.arrow-branch.bottom {
+  top: 85%;
+}
+
+
+@media (max-width: 992px) {
+  .revenue-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .split-section {
+    flex-direction: column;
+  }
+  .split-chart {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .revenue-grid {
+    grid-template-columns: 1fr;
+  }
+}

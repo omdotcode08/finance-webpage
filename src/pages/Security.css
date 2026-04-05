@@ -1,0 +1,154 @@
+.security-content {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.features-grid {
+  flex: 1.5;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  display: flex;
+  gap: 15px;
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  background-color: var(--primary-navy-light);
+  border-color: var(--primary-green);
+  box-shadow: 0 5px 15px rgba(0, 230, 118, 0.05);
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background-color: rgba(0, 230, 118, 0.1);
+  color: var(--primary-green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.security-widgets {
+  flex: 0.8;
+  position: sticky;
+  top: 100px;
+}
+
+.security-score-widget {
+  padding: 30px;
+  text-align: center;
+}
+
+/* Circular Chart CSS */
+.score-ring {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+.circular-chart.text-warning .circle {
+  stroke: #FFC107;
+}
+
+.percentage {
+  fill: var(--white);
+  font-family: inherit;
+  font-size: 0.5em;
+  text-anchor: middle;
+  font-weight: 700;
+}
+
+@keyframes progress {
+  0% { stroke-dasharray: 0 100; }
+}
+
+.checklist {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.checklist .passed { color: var(--text-main); }
+.checklist .passed svg { color: var(--primary-green); }
+
+.checklist .warning { color: var(--text-muted); }
+.checklist .warning svg { color: #FFC107; }
+
+.checklist .failed { color: var(--text-muted); }
+.checklist .failed svg { color: #FF5252; }
+
+.bug-bounty-card {
+  padding: 25px;
+}
+
+.d-flex { display: flex; }
+.align-items-center { align-items: center; }
+.gap-3 { gap: 1rem; }
+.d-inline-block { display: inline-block; }
+
+@media (max-width: 992px) {
+  .security-content {
+    flex-direction: column;
+  }
+  .security-widgets {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
